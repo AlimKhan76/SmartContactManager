@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{normal/base::layout(~{::body})}">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+</head>
+<body>
+	<div
+		class=" mt-5 container text-center align-items-center justify-content-center">
+		<h1 th:text="'Welcome to your Smart Contact Manager '+${name}"></h1>
+		<a th:href="@{/user/viewpage/0}" class="btn btn-outline-danger">View
+			Contacts</a> <a th:href="@{/user/add_contact_redirect}"
+			class="btn btn-outline-danger">Add Contacts</a>
+
+
+	</div>
+</body>
+</html>

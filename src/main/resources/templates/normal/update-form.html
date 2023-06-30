@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{normal/base::layout(~{::body})}">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${title}"></title>
+</head>
+<body>
+	<!--Main Navigation-->
+	<header>
+
+		<!-- Background image -->
+		<div id="intro" class="bg-image shadow-2-strong">
+			<div class="mask d-flex align-items-center h-100"
+				style="background-color: rgba(0, 0, 0, 0.8);">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-xl-5 col-md-8">
+							<div th:if="${session.message!=null}"
+								th:classappend="${session.message.type}" class="alert "
+								role="alert">
+								<h6 class="text-center" th:text="${session.message.content}"></h6>
+								<div th:text="${@sessionHelper.removeMessageFromSession()}"></div>
+
+							</div>
+
+							<form class="bg-white rounded-5 shadow-5-strong p-5"
+								th:action="@{/user/update_contact}" method="post"
+								th:object="${contact}">
+								<h1 class="text-center mb-5">Update Contact</h1>
+
+								<!-- Hidden input field for cId used for updating -->
+								<input type="hidden" name="cId" class="form-control"
+									th:value="${contact.cId}">
+
+								<!-- Name input -->
+
+								<div class="form-outline mb-4">
+									<label class="form-label" for="form1Example1">Contact
+										Name</label> <input th:value="${contact.cName}" type="text"
+										id="form1Example1" name="cName" class="form-control" required />
+								</div>
+
+								<!-- Number input -->
+
+								<div class="form-outline mb-4">
+									<label class="form-label" for="form1Example2">Phone
+										Number</label> <input th:value="${contact.cnumber}" type="text"
+										id="form1Example2" name="cnumber" class="form-control"
+										minlength="10" pattern="^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$"
+										required />
+								</div>
+
+								<!-- Description input -->
+								<div class="form-outline mb-4">
+									<label class="form-label" for="form1Example2">Description</label>
+									<textarea th:text="${contact.description}" id="form1Example2"
+										name="description" class="form-control" required /></textarea>
+								</div>
+
+								<!-- Submit button -->
+								<button type="submit" class="btn btn-primary btn-block">Update
+									Contact</button>
+
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Background image -->
+	</header>
+	<!--Main Navigation-->
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+.hometemplate {
+	align-items: center;
+	justify-content: center;
+}
+
+#intro {
+	background-image:
+		url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
+	height: 100vh;
+}
+
+/* Height for devices larger than 576px */
+@media ( min-width : 992px) {
+	#intro {
+		margin-top: -58.59px;
+	}
+}
+
+.navbar .nav-link {
+	color: #fff !important;
+}
+
+
+
+.search-container{
+	position: relative;
+}
+
+.search-result{
+	position: absolute;
+	background-color: white;
+	width:100%;
+	padding:10px;
+	border: 2px solid black;
+	
+	display: none;
+}
