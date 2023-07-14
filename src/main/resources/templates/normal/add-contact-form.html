@@ -41,7 +41,7 @@
 								<div class="form-outline mb-4">
 									<label class="form-label" for="form1Example2">Phone
 										Number</label> <input type="text" id="form1Example2" name="cnumber"
-										class="form-control" minlength="10"
+										class="form-control" 
 										pattern="^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$" required />
 								</div>
 
@@ -52,11 +52,13 @@
 										class="form-control" required /></textarea>
 								</div>
 
+								<div>
 								<!-- Submit button -->
 								<button type="submit" class="btn btn-primary btn-block">Add
 									Contact</button>
-
-
+								<a th:href="@{/user/viewpage/0}" class="btn btn-block btn-danger">Go
+									Back</a>
+										</div>
 							</form>
 						</div>
 					</div>

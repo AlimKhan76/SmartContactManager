@@ -41,12 +41,17 @@
 					</tbody>
 				</table>
 
-				<div>
+				<div class="container">
 					<a th:onclick="|deleteContact(${contact.cId})|"
-						class="btn text-light btn-block btn-danger">Delete</a> <br> <a
+						class="btn btn-block text-light btn-danger">Delete</a> 
+					 
+						<a
 						th:href="@{'/user/update/'+${contact.cId}} "
 						class="btn btn-block btn-primary">Update</a>
-
+				
+				<a
+						th:href="@{/user/viewpage/0}"
+						class="btn btn-block btn-success">Back</a>
 				</div>
 
 			</div>
